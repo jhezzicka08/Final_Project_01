@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Crafting - Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="sidebar-layout">
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-link"></i> Hand Crafting
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sidebar-image">
+          <div class="one-underline" style="border-bottom: 2px solid black; width: 1800px; margin-bottom: 50px;"></div>
+            <h2 class="script-heading">Products</h2>
+           
+            
+            <div class="tabs">
+                <button id="foodBtn" class="tab-btn active" onclick="showCategory('food')">Food<br>Keychains</button>
+                <button id="animalBtn" class="tab-btn" onclick="showCategory('animal')">Animal<br>Keychains</button>
+            </div>
+           <div class="one-underline" style="border-bottom: 2px solid black; width: 1800px; margin-bottom: 50px;"></div>
+            <div id="food-gallery" class="products-grid">
+                <div class="product-card">
+                    <img src="sushi.png" alt="Sushi" class="product-img">
+                    <h3 class="product-title">Sushi Keychains</h3>
+                    <button class="pink-btn wide">Order now for ₱50</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="watermelon.png" alt="Watermelon" class="product-img">
+                    <h3 class="product-title">Watermelon Slice Keychains</h3>
+                    <button class="pink-btn wide">Order now for ₱50</button>
+                </div>
+            </div>
+
+            <div id="animal-gallery" class="products-grid" style="display: none;">
+                <div class="product-card">
+                    <img src="cat.png" alt="Cat" class="product-img">
+                    <h3 class="product-title">Cat Keychains</h3>
+                    <button class="pink-btn wide">Order now for ₱100</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="chick.png" alt="Chick" class="product-img">
+                    <h3 class="product-title">Mini Chick Keychains</h3>
+                    <button class="pink-btn wide">Order now for ₱60</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showCategory(category) {
+            const foodGallery = document.getElementById('food-gallery');
+            const animalGallery = document.getElementById('animal-gallery');
+            const foodBtn = document.getElementById('foodBtn');
+            const animalBtn = document.getElementById('animalBtn');
+
+            if (category === 'food') {
+                foodGallery.style.display = 'grid';
+                animalGallery.style.display = 'none';
+                foodBtn.classList.add('active');
+                animalBtn.classList.remove('active');
+            } else {
+                foodGallery.style.display = 'none';
+                animalGallery.style.display = 'grid';
+                animalBtn.classList.add('active');
+                foodBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
